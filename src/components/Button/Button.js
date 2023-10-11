@@ -1,14 +1,11 @@
 import React from 'react';
+import styles from './Button.module.css';
 
-import styles from './Button.module.css'
-
-const Button = ({ onLoadMore, isHidden }) => (
-  <button type="button"
-    onClick={onLoadMore}
-    className={styles.button}
-    style={{ display: isHidden ? 'none' : 'block' }}>
+const Button = ({ onClick }) => (
+  <button type="button" onClick={onClick} className={styles.button}>
     Load more
   </button>
 );
+
 
 export default Button;

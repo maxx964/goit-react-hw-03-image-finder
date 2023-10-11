@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
+import styles from './SearchBar.module.css';
 
-import styles from './'
-
-class Searchbar extends Component {
+class SearchBar extends Component {
   state = {
     query: '',
   };
@@ -11,20 +10,21 @@ class Searchbar extends Component {
     this.setState({ query: e.target.value });
   };
 
-     handleSubmit = (e) => {
+  handleSubmit = (e) => {
+    e.preventDefault();
     this.props.onSubmit(this.state.query);
-    };
-    
-      render() {
+  };
+
+  render() {
     return (
-      <header className={styles.ImageSearchForm}>
-        <form className={styles.SearchForm} onSubmit={this.handleSubmit}>
-          <button type="submit" className={styles.SearchFormButton }>
-            <span className={styles.SearchFormButtonLabel}>Search</span>
+      <header className={styles.searchbar}>
+        <form className={styles.form} onSubmit={this.handleSubmit}>
+          <button type="submit" className={styles.button}>
+            <span className={styles.buttonLabel}>Search</span>
           </button>
 
           <input
-            className={styles.SearchFormInput}
+            className={styles.input}
             type="text"
             autoComplete="off"
             autoFocus
@@ -38,4 +38,4 @@ class Searchbar extends Component {
   }
 }
 
-export default Searchbar;
+export default SearchBar;
