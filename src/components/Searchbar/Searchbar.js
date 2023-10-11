@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import styles from './Searchbar.module.css'
+import styles from './'
 
 class Searchbar extends Component {
   state = {
@@ -17,7 +17,7 @@ class Searchbar extends Component {
     
       render() {
     return (
-      <header className={styles.SearchBar}>
+      <header className={styles.ImageSearchForm}>
         <form className={styles.SearchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={styles.SearchFormButton }>
             <span className={styles.SearchFormButtonLabel}>Search</span>
