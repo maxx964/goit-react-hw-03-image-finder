@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import SearchBar from './SearchBar/SearchBar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import Loader from './Loader/Loader';
@@ -63,13 +64,22 @@ class App extends Component {
     }
   };
 
+  openModal = (largeImageURL) => {
+  this.setState({ largeImageURL });
+  };
+  
+   closeModal = () => {
+    this.setState({ largeImageURL: '' });
+  };
+
+
   render() {
     const { images, isLoading, largeImageURL } = this.state;
 
     return (
       <div className={styles.App}>
         <SearchBar onSubmit={this.handleImageSearch} />
-        <ImageGallery images={images} />
+        <ImageGallery images={images} onImageClick={this.openModal} />
         {isLoading && <Loader />}
         {images.length > 0 && <Button onClick={this.loadMoreImages} />}
         {largeImageURL && (

@@ -12,6 +12,7 @@ const ImageGallery = ({ images, onImageClick }) => (
         largeImageURL={image.largeImageURL}
         onClick={() => onImageClick(image.largeImageURL)}
       />
+      
     ))}
   </ul>
 );
